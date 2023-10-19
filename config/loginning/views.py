@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView, LogoutView, reverse_lazy
-from .forms import UserLoginForm
+# from .forms import UserLoginForm
 
 
 # # Cbv LoginView

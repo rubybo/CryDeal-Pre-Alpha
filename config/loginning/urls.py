@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import LoginUser, LogoutUser
+# from .views import LoginUser, LogoutUser
 
 
 
