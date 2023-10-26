@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.contrib.auth.views import LoginView, LogoutView, reverse_lazy
-# from .forms import UserLoginForm
+from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic import CreateView, View
+from django.urls import reverse_lazy
+
+from .forms import *
 
 
 # # Cbv LoginView
@@ -15,3 +17,17 @@ from django.contrib.auth.views import LoginView, LogoutView, reverse_lazy
 #
 #     def get_success_url(self):
 #         return reverse_lazy('loginning:user-login')
+
+class RegisterView(CreateView):
+    form_class = SignupForm
+    template_name = 'loginning/register.html'
+    success_url = reverse_lazy('login')
+
+
+class LoginUser(LoginView):
+    form_class = SigninForm
+    template_name = 'loginning/auth.html'
+
+
+class LogoutUser(LogoutView):
+    next_page = '/'
